@@ -25,7 +25,7 @@ function HomePage() {
   return (
     <div>
       {user ? <h1>{user.email}</h1> : <h1>not logged in</h1>}
-      <h1>Home</h1>
+      <h1 className="text-3xl">Home Page</h1>
       <button onClick={hadleLogout}>Logout</button>
     </div>
   );
