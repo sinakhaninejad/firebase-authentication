@@ -2,9 +2,10 @@ import React, { useRef, useState, useEffect } from "react";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { AuthProvider } from "../contexts/AuthContext";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function SignIn() {
+  const navigate = useNavigate();
   const emailRef = useRef();
   const passwordRef = useRef();
   const [user, setUser] = useState();
@@ -22,11 +23,11 @@ function SignIn() {
         const userCred = userCredential.user;
         setUser(userCred);
         setLoading(true);
-        //Navigate("/");
+        navigate("/firebase-authentication");
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        let errorCode = error.code;
+        let errorMessage = error.message;
         console.log(errorCode, errorMessage);
       });
   };
@@ -100,7 +101,7 @@ function SignIn() {
                     </div>
                   </div>
                   <a
-                    href="#"
+                    href="/firebase-authentication/forgotpassword"
                     className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
                   >
                     Forgot password?

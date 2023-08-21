@@ -26,7 +26,11 @@ function HomePage() {
     <div>
       {user ? <h1>{user.email}</h1> : <h1>not logged in</h1>}
       <h1 className="text-3xl">Home Page</h1>
-      <button onClick={hadleLogout}>Logout</button>
+      {user ? (
+        <button onClick={hadleLogout}>Logout</button>
+      ) : (
+        <a href="/firebase-authentication/signin">log in</a>
+      )}
     </div>
   );
 }
