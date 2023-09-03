@@ -7,7 +7,7 @@ an authentication setup using firebase api built in react
 
 ## Installation
 1.Clone the repository:
-[git clone](https://github.com/sinakhaninejad/chat-app.git).
+[git clone](https://github.com/sinakhaninejad/firebase-authentication.git).
 
 2.Install dependencies:
 npm install
